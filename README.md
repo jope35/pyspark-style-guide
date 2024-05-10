@@ -156,7 +156,7 @@ df.withColumn(
 )
 ```
 
-Avoid including columns in the select statement if they are going to remain unused and choose instead an explicit set of columns - this is a preferred alternative to using `.drop()` since it guarantees that schema mutations won't cause unexpected columns to bloat your dataframe. However, dropping columns isn't inherintly discouraged in all cases; for instance- it is commonly appropriate to drop columns after joins since it is common for joins to introduce redundant columns. 
+Avoid including columns in the select statement if they are going to remain unused and choose instead an explicit set of columns - this is a preferred alternative to using `.drop()` since it guarantees that schema mutations won't cause unexpected columns to bloat your dataframe. However, dropping columns isn't inherently discouraged in all cases; for instance, it is commonly appropriate to drop columns after joins since it is common for joins to introduce redundant columns. 
 
 Finally, instead of adding new columns via the select statement, using `.withColumn()` is recommended instead for single columns. When adding or manipulating tens or hundreds of columns, use a single `.select()` for performance reasons.
 
